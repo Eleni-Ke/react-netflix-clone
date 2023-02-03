@@ -136,8 +136,46 @@ nav .container-fluid {
 .d-flex.container {
   display: flex;
   flex-direction: column;
+
+  /* width: max-content; */
 }
 
 .d-flex.container .row {
   display: flex;
+  overflow: hidden;
+  /* width: 100%; */
+  flex-wrap: wrap;
+  margin: 20px 5%;
+}
+.d-flex.container .col {
+  width: 33%;
+}
+
+@media (min-width: 670px) {
+  .d-flex.container .col {
+    width: 25%;
+  }
+}
+
+@media (min-width: 870px) {
+  .d-flex.container .col {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1150px) {
+  .d-flex.container .col {
+    width: 16%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .d-flex.container .col {
+    width: 14%;
+  }
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15rem;
 }

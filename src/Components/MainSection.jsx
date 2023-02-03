@@ -33,27 +33,82 @@ import Gallery from "./Gallery";
 //     Poster: "https://bit.ly/2QzHt1n",
 //   },
 // ];
-// const url = "http://www.omdbapi.com/?apikey=7a852a40&s=";
+
+const url = "http://www.omdbapi.com/?apikey=7a852a40&s=";
 
 class MainSection extends Component {
   state = {
-    firstSaga: [],
-    // secondSaga: [],
-    // thirdSaga: [],
+    arrays: {
+      saga: [],
+      secondSaga: [],
+      thirdSaga: [],
+    },
   };
-  getSaga = async () => {
+  getSaga = async (movieName) => {
     try {
-      let response = await fetch(
-        "http://www.omdbapi.com/?apikey=7a852a40&s=harry potter"
-      );
+      let response = await fetch(url + "Lord of the Rings");
       let movieArr = await response.json();
       movieArr = movieArr.Search;
-      this.setState({ firstSaga: movieArr });
-      console.log(movieArr);
+      this.setState({
+        arrays: {
+          ...this.state.arrays,
+          saga: movieArr,
+        },
+      });
+      let responseTwo = await fetch(url + "Harry Potter");
+      let secondMovieArr = await responseTwo.json();
+      secondMovieArr = secondMovieArr.Search;
+      this.setState({
+        arrays: {
+          ...this.state.arrays,
+          secondSaga: secondMovieArr,
+        },
+      });
+      let thirdResponse = await fetch(url + "Star Wars");
+      let thirdMovieArr = await thirdResponse.json();
+      thirdMovieArr = thirdMovieArr.Search;
+      this.setState({
+        arrays: {
+          ...this.state.arrays,
+          thirdSaga: thirdMovieArr,
+        },
+      });
     } catch (error) {
       console.log(error);
     }
   };
+  //   getSecondSaga = async (movieName) => {
+  //     try {
+  //       let responseTwo = await fetch(url + movieName);
+  //       let movieArr = await responseTwo.json();
+  //       movieArr = movieArr.Search;
+  //       this.setState({
+  //         arrays: {
+  //           ...this.state.arrays,
+  //           secondSaga: movieArr,
+  //         },
+  //       });
+  //       console.log(movieArr);
+  //       console.log(this.state.arrays);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getThirdSaga = async (movieName) => {
+  //     try {
+  //   let response = await fetch(url + movieName);
+  //   let movieArr = await response.json();
+  //   movieArr = movieArr.Search;
+  //   this.setState({
+  //     arrays: {
+  //       ...this.state.arrays,
+  //       thirdSaga: movieArr,
+  //     },
+  //   });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
   componentDidMount() {
     this.getSaga();
   }
@@ -61,9 +116,17 @@ class MainSection extends Component {
     return (
       <Container className="d-flex">
         <>
-          <h2>The test Saga:</h2>
+          <h2>Lord of The Rings Saga:</h2>
           <Row>
-            <Gallery sagaArr={this.state.firstSaga} />
+            <Gallery sagaArr={this.state.arrays.saga} />
+          </Row>
+          <h2>Harry Potter Saga:</h2>
+          <Row>
+            <Gallery sagaArr={this.state.arrays.secondSaga} />
+          </Row>
+          <h2>Star Wars Saga:</h2>
+          <Row>
+            <Gallery sagaArr={this.state.arrays.thirdSaga} />
           </Row>
         </>
 
