@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Form, Button } from "react-bootstrap";
 import netflixLogo from "../pictures/Netflix_Logo.png";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { BiBell } from "react-icons/bi";
@@ -25,9 +25,19 @@ class NavigationBar extends Component {
             </Nav>
           </Navbar.Collapse>
           <Nav className="right-navbar">
-            <Nav.Link href="#">
-              <HiOutlineMagnifyingGlass />
-            </Nav.Link>
+            <Form
+              onSubmit={(e) => {
+                e.preventDefault();
+                console.log("form is submitting...", e);
+              }}
+            >
+              <Form.Group className="mb-3">
+                <Form.Control type="text" placeholder="Search" required />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                <HiOutlineMagnifyingGlass />
+              </Button>
+            </Form>
             <Nav.Link href="#">Kids</Nav.Link>
             <Nav.Link href="#">
               <BiBell />

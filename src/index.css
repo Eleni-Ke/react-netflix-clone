@@ -55,51 +55,12 @@ nav .container-fluid {
 
 .right-navbar {
   margin-left: auto;
+  display: flex;
 }
 
-/* .search-btn.dropdown-toggle.btn {
-  border: none;
-  font-size: 15px;
-  background: none;
-} */
-
-/* .dropdown-item {
-  font-size: 0.7rem;
-  padding: 0.5rem;
-  min-height: 0.4rem;
-} */
-
-/* .dropleft .search-btn::before {
-  display: none;
-} */
-
-/* #navbarSupportedContent ul {
-  text-align: center;
-  position: absolute;
-  z-index: 3;
-  width: 40rem;
-} */
-
-/* @media screen and (max-width: 992px) {
-  #navbarSupportedContent ul {
-    background-color: rgba(0, 0, 0, 0.739);
-    width: 10rem;
-  }
-} */
-
-/* .bell-symbol {
-  font-size: 1.4rem;
-} */
-
-/* .account-symbol {
-  object-fit: cover;
-  overflow: hidden;
-  height: 100%;
-} */
-
-/* .account-symbol img {
-  height: 100%;
-} */
+form {
+  display: flex;
+}
 
 /* jumbotron */
 
