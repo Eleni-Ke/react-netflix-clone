@@ -218,3 +218,46 @@ nav .container-fluid {
     min-width: 14%;
   }
 }
+
+/* footer */
+
+.footer-container {
+  width: 60%;
+  margin-inline: auto;
+  margin-bottom: 200px;
+  text-align: left;
+}
+
+.socials {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.socials svg {
+  margin-right: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  color: #7a7979;
+  margin-bottom: 30px;
+}
+
+.footer-link {
+  width: 25%;
+}
+
+.service-btn {
+  margin-bottom: 20px;
+  border: 1px solid #7a7979;
+  color: #7a7979;
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+.copyrights {
+  color: #7a7979;
+}
