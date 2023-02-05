@@ -10,9 +10,6 @@ class MainSection extends Component {
       <Container className="d-flex main-container">
         <>
           <h2>Lord of The Rings Saga:</h2>
-          <div>
-            <Spinner animation="border" variant="success" role="status" />
-          </div>
           <Row>
             <Gallery saga="Lord of the Rings" />
           </Row>

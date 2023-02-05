@@ -42,10 +42,6 @@ class Gallery extends Component {
   render() {
     return (
       <>
-        <div className="spinner-container">
-          <Spinner animation="border" variant="light" />
-        </div>
-
         {this.state.isLoading && <Spinner animation="border" variant="light" />}
         {this.state.isError && (
           <Alert variant="danger">Aww snap, we got an error! 🌩️</Alert>

@@ -3,6 +3,7 @@ import "./App.css";
 import MainSection from "./Components/MainSection";
 import NavigationBar from "./Components/NavigationBar";
 import PageFooter from "./Components/PageFooter";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
