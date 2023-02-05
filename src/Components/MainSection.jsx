@@ -44,7 +44,7 @@ class MainSection extends Component {
       thirdSaga: [],
     },
   };
-  getSaga = async (movieName) => {
+  getSaga = async () => {
     try {
       let response = await fetch(url + "Lord of the Rings");
       let movieArr = await response.json();
@@ -77,44 +77,13 @@ class MainSection extends Component {
       console.log(error);
     }
   };
-  //   getSecondSaga = async (movieName) => {
-  //     try {
-  //       let responseTwo = await fetch(url + movieName);
-  //       let movieArr = await responseTwo.json();
-  //       movieArr = movieArr.Search;
-  //       this.setState({
-  //         arrays: {
-  //           ...this.state.arrays,
-  //           secondSaga: movieArr,
-  //         },
-  //       });
-  //       console.log(movieArr);
-  //       console.log(this.state.arrays);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getThirdSaga = async (movieName) => {
-  //     try {
-  //   let response = await fetch(url + movieName);
-  //   let movieArr = await response.json();
-  //   movieArr = movieArr.Search;
-  //   this.setState({
-  //     arrays: {
-  //       ...this.state.arrays,
-  //       thirdSaga: movieArr,
-  //     },
-  //   });
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+
   componentDidMount() {
     this.getSaga();
   }
   render() {
     return (
-      <Container className="d-flex">
+      <Container className="d-flex main-container">
         <>
           <h2>Lord of The Rings Saga:</h2>
           <Row>
