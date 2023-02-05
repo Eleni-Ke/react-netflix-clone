@@ -1,7 +1,7 @@
 // 7a852a40
 
 import { Component } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import Gallery from "./Gallery";
 
 class MainSection extends Component {
@@ -10,6 +10,9 @@ class MainSection extends Component {
       <Container className="d-flex main-container">
         <>
           <h2>Lord of The Rings Saga:</h2>
+          <div>
+            <Spinner animation="border" variant="success" role="status" />
+          </div>
           <Row>
             <Gallery saga="Lord of the Rings" />
           </Row>
