@@ -3,16 +3,20 @@ import "./App.css";
 import MainSection from "./Components/MainSection";
 import NavigationBar from "./Components/NavigationBar";
 import PageFooter from "./Components/PageFooter";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <NavigationBar />
-      <Jumbotron />
-      <MainSection />
-      <PageFooter />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavigationBar />
+        <Jumbotron />
+        <Routes>
+          <Route element={<MainSection />} path="/tv-shows" />
+        </Routes>
+        <PageFooter />
+      </div>
+    </BrowserRouter>
   );
 }
 

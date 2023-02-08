@@ -3,6 +3,7 @@ import { Navbar, Container, Nav, Form, Button } from "react-bootstrap";
 import netflixLogo from "../pictures/Netflix_Logo.png";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { BiBell } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 class NavigationBar extends Component {
   render() {
@@ -15,10 +16,12 @@ class NavigationBar extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#">Home</Nav.Link>
-              <Nav.Link className="active" href="#">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+              <Link className="nav-link" to="/tv-shows">
                 TV Shows
-              </Nav.Link>
+              </Link>
               <Nav.Link href="#">New & Popular</Nav.Link>
               <Nav.Link href="#">My List</Nav.Link>
               <Nav.Link href="#">Browse by Languages</Nav.Link>
